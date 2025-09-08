@@ -10,7 +10,7 @@ Use Ubuntu. :) To be able to install the tiny_tds gem, you need:
 
 In your Gemfile:
 
-    gem 'visma', '~> 0.6', git: "https://github.com/voitcode/visma"
+    gem 'visma', '~> 0.6', git: "https://github.com/soverein-it/visma"
 
 Set up the database connection in `config/database.yml`
 

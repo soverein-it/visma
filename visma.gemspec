@@ -7,9 +7,9 @@ require 'visma/version'
 Gem::Specification.new do |s|
   s.name        = 'visma'
   s.version     = Visma::VERSION
-  s.authors     = ['Runar Ingebrigtsen', 'Marvin Wiik']
-  s.email       = ['runar@voit.no', 'marvin@voit.no']
-  s.homepage    = 'https://voit.no'
+  s.authors     = ['Runar Ingebrigtsen']
+  s.email       = ['runar@rin.no']
+  s.homepage    = 'https://github.com/soverein-it/visma'
   s.summary     = 'Integrate Rails 6 with Visma Global'
   s.description = 'Visma Global ERP integration for Ruby on Rails. Requires support for SQL Server 2012 and newer.'
   s.license     = 'MIT'
