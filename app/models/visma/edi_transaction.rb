@@ -7,7 +7,6 @@ module Visma
     include Visma::Timestamp
     include Visma::ChangeBy
     include Visma::CreatedScopes
-    include Visma::CreatedBy
 
     belongs_to :edi_provider,
                foreign_key: 'EDIProviderNo',

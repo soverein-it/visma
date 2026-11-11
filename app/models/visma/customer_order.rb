@@ -4,7 +4,6 @@ class Visma::CustomerOrder < Visma::Base
 
   include Visma::Timestamp
   include Visma::ChangeBy
-  include Visma::CreatedBy
   include Visma::CreatedScopes
 
   belongs_to :customer, foreign_key: :CustomerNo

@@ -6,7 +6,6 @@ module Visma
 
     include Visma::Timestamp
     include Visma::CreatedScopes
-    include Visma::CreatedBy
     include Visma::ChangeBy
     belongs_to :chain, foreign_key: :ChainNo
     belongs_to :customer, foreign_key: :CustomerNo

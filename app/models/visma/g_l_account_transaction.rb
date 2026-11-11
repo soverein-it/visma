@@ -6,7 +6,6 @@ module Visma
 
     include Visma::Timestamp
     include Visma::CreatedScopes
-    include Visma::CreatedBy
     include Visma::ChangeBy
 
     belongs_to :account, foreign_key: :GLAccountNo, class_name: 'Visma::GLAccount'
