@@ -2,4 +2,5 @@
 module Visma
 end
 
+require 'visma/error'
 require 'visma/engine'
