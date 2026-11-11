@@ -19,8 +19,8 @@ class Visma::CustomerOrder < Visma::Base
   has_many :customer_order_lines, foreign_key: :OrderNo
   alias order_lines customer_order_lines
 
-  enum OrderStatus: { system_invoiced: 1030, user_invoiced: 1000, nullified: -1, for_picking: 1015 }
-  enum EdiStatus: %i[not_edi edi]
+  enum :OrderStatus, { system_invoiced: 1030, user_invoiced: 1000, nullified: -1, for_picking: 1015 }
+  enum :EdiStatus, %i[not_edi edi]
 
   scope :with_order_number_in_reference, -> {
     where("NameContactNoInvoice like '%Ordrenr%'")

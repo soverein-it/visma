@@ -3,7 +3,7 @@
 class Visma::PriceList < Visma::Base
   self.table_name += 'PriceList'
   self.primary_key = 'PriceListNo'
-  enum InActiveYesNo: [:active, :inactive]
+  enum :InActiveYesNo, [:active, :inactive]
   include Visma::Timestamp
   include Visma::CreatedScopes
   include Visma::ChangeBy

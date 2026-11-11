@@ -9,7 +9,7 @@ class Visma::CustomerBonusProfile < Visma::Base
   self.table_name += 'CustomerBonusProfile'
   self.primary_key = 'CustomerBonusProfileNo'
 
-  enum TypeOfPeriod: { month: 1, quarter: 2, tri_annual: 3 }
+  enum :TypeOfPeriod, { month: 1, quarter: 2, tri_annual: 3 }
 
   has_many :customer_bonus_profile_lines, foreign_key: :CustomerBonusProfileNo
   has_many :customers, foreign_key: :CustomerBonusProfileNo

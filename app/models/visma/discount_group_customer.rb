@@ -6,7 +6,7 @@ module Visma
 class DiscountGroupCustomer < Visma::Base
   self.table_name += 'DiscountGroupCustomer'
   self.primary_key = 'DiscountGrpCustNo'
-  enum InActiveYesNo: %i[active inactive]
+  enum :InActiveYesNo, %i[active inactive]
   include Visma::Timestamp
   include Visma::CreatedScopes
   include Visma::ChangeBy

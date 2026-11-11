@@ -4,7 +4,7 @@ class Visma::IntermediateGroup < Visma::Base
   include Visma::Timestamp
   include Visma::CreatedScopes
   include Visma::ChangeBy
-  enum InActiveYesNo: [:active, :inactive]
+  enum :InActiveYesNo, [:active, :inactive]
   default_scope { active }
 
   has_many :article,

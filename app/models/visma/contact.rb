@@ -7,7 +7,7 @@ class Visma::Contact < Visma::Base
   include Visma::ChangeBy
   include Visma::PrimaryKey
 
-  enum InActiveYesNo: [:active, :inactive]
+  enum :InActiveYesNo, [:active, :inactive]
 
   belongs_to :customer, foreign_key: :CustomerNo
   has_many :customers_as_invoice_contact,

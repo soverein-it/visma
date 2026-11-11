@@ -34,7 +34,7 @@ module Visma
 
     has_many :edi_transactions, primary_key: :InvoiceNo, foreign_key: :DocNo
 
-    enum OrderStatus: {
+    enum :OrderStatus, {
       system_invoiced: 1030,
       user_invoiced: 1000,
       nullified: -1,

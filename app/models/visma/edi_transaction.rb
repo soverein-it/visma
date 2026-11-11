@@ -23,7 +23,7 @@ module Visma
                primary_key: 'InvoiceNo'
     alias invoice customer_order_copy
 
-    enum Status: { rejected: 3, sent: 5 }
+    enum :Status, { rejected: 3, sent: 5 }
 
     # Was this transaction rejected due to order sums?
     def order_summary_failed?

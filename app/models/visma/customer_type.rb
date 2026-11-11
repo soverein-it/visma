@@ -1,7 +1,7 @@
 class Visma::CustomerType < Visma::Base
   self.table_name += 'CustomerType'
   self.primary_key = 'CustomerTypeNo'
-  enum LockedYesNo: [:active, :inactive]
+  enum :LockedYesNo, [:active, :inactive]
   default_scope { active }
   include Visma::Timestamp
   include Visma::CreatedScopes

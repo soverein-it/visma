@@ -7,7 +7,7 @@ class Visma::Article < Visma::Base
   include Visma::ChangeBy
 
   # Enable active? and inactive? methods based on InActiveYesNo being 0 or 1
-  enum InActiveYesNo: [:active, :inactive]
+  enum :InActiveYesNo, [:active, :inactive]
 
   # default scope with strange syntax to support joins
   default_scope { where('Article.ArticleNo NOT like(?)', '%+%') }
@@ -175,7 +175,7 @@ class Visma::Article < Visma::Base
     ean.try(:EANNo)
   end
 
-  enum StorageTypeNo: { cooled_goods: 1, frozen_goods: 2, dry_goods: 3 }
+  enum :StorageTypeNo, { cooled_goods: 1, frozen_goods: 2, dry_goods: 3 }
   def storage_type
     return 'Kjøl' if cooled_goods?
 
