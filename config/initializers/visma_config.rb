@@ -11,9 +11,9 @@ config = {
 }
 
 begin
-  VISMA_CONFIG = YAML.load_file('config/visma.yml')
+  VISMA_CONFIG = YAML.load_file(Rails.root.join('config/visma.yml'))
 rescue
-  File.write 'config/visma.yml', config.collect {|k,v| "# #{v.first}\n#{k}: #{v.last}" }.join("\n")
+  File.write Rails.root.join('config/visma.yml'), config.collect {|k,v| "# #{v.first}\n#{k}: #{v.last}" }.join("\n")
   raise Visma::Error, "You must set up the VISMA_CONFIG values in config/visma.yml"
 end
 

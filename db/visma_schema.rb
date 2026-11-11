@@ -2517,6 +2517,7 @@ ActiveRecord::Schema.define(:version => 0) do
   end
 
   create_table "KuraasAS.SavedDocuments", :id => false, :force => true do |t|
+    t.integer "DocumentsID"
     t.string "UtilityBits"
     t.datetime "LastUpdate"
     t.integer "LastUpdatedBy"
@@ -4210,6 +4211,7 @@ ActiveRecord::Schema.define(:version => 0) do
   end
 
   create_table "KuraasAS.JobLock", :id => false, :force => true do |t|
+    t.integer "SeqNo"
     t.string "UserSession"
     t.integer "JobID"
   end

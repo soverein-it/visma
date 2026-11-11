@@ -38,11 +38,21 @@ Then in `config/visma.yml`, define required variables:
 
 ## Dependencies
 
-The v0.6 series of this gem depends on rails 6 and activerecord-sqlserver-adapter 6 series.
+The v0.7 series of this gem depends on rails 8 (8.0.5.2 or 8.1.4.1 and newer) and the activerecord-sqlserver-adapter 8 series. Use v0.6 for rails 6.
 
 We are only supporting Microsoft SQL Server 2012 and newer.
 
 If you want SQL Server 2008 support, you need an older version of this gem.
+
+## Development
+
+The tests and the dummy app in `test/dummy` run against SQL Server in Docker:
+
+    docker compose up -d --wait
+    bundle exec rake visma:db:prepare
+    bundle exec rake test
+
+`visma:db:prepare` creates `visma_development` and `visma_test` and loads `db/visma_schema.rb` into the `KuraasAS` schema.
 
 # License
 

@@ -1,25 +1,28 @@
-# SQLite version 3.x
-#   gem install sqlite3
-#
-#   Ensure the SQLite 3 gem is defined in your Gemfile
-#   gem 'sqlite3'
-#
+# SQL Server from docker-compose.yml. The dummy app and the Visma tables share
+# one database per environment, with the Visma tables in the KuraasAS schema
+# (matching db/visma_schema.rb). Prepare it with `bundle exec rake visma:db:prepare`.
 default: &default
-  adapter: sqlite3
-  pool: 5
-  timeout: 5000
+  adapter: sqlserver
+  host: <%= ENV.fetch("SQLSERVER_HOST", "localhost") %>
+  port: <%= ENV.fetch("SQLSERVER_PORT", 1433) %>
+  username: <%= ENV.fetch("SQLSERVER_USERNAME", "sa") %>
+  password: <%= ENV.fetch("SQLSERVER_PASSWORD", "Visma_Test_2026") %>
+  timeout: 15000
 
 development:
-  <<: *default
-  database: db/development.sqlite3
+  primary:
+    <<: *default
+    database: visma_development
+  visma:
+    <<: *default
+    database: visma_development
+    database_tasks: false
 
-# Warning: The database defined as "test" will be erased and
-# re-generated from your development database when you run "rake".
-# Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: db/test.sqlite3
-
-production:
-  <<: *default
-  database: db/production.sqlite3
+  primary:
+    <<: *default
+    database: visma_test
+  visma:
+    <<: *default
+    database: visma_test
+    database_tasks: false

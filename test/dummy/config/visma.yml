@@ -1,0 +1,10 @@
+# Visma table prefix
+table_name_prefix: KuraasAS.
+# The Customer number employees are Chain members of
+employee_chain_number: 49999
+# The CustomerProfileNo used for factoring
+factoring_customer_profile_number: 101
+# The FormProfileNo used for factoring
+factoring_form_profile_number: 506
+# The RemittanceProfileNo used for factoring
+factoring_remittance_profile_number: 6
